@@ -1,8 +1,9 @@
 import Home from './components/Home';
 import Blog from './components/Blog';
 import About from './components/About';
+import NotFound from './components/NotFound';
 
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link, Redirect } from "react-router-dom";
 
 import './App.css';
 
@@ -25,6 +26,12 @@ function App() {
         </Route>
         <Route path='/about'>
           <About />
+        </Route>
+        <Route path='/notfound'>
+          <NotFound />
+        </Route>
+        <Route path='*'>
+          <Redirect to='/notfound'/>
         </Route>
       </Switch>
     </Router>
